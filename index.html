@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wedding</title>
+    <script src="index2.js" defer></script>  
+    <link rel="stylesheet" href="index2.css"> 
+    <style> 
+        body{ 
+    margin: 0;
+            padding: 0;
+            height: 100%;
+} 
+#image{
+    background-size: cover; 
+    background-position: center;
+    width: 1400px;
+    height: auto; 
+    position: fixed; 
+    filter: blur(3px); 
+    margin-left: -5px; 
+}  
+
+#top{ 
+    position: absolute;  
+    top: 17px;
+    left: 470px;
+  font-size: 35px; 
+  color: white; 
+  letter-spacing: 1px; 
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+} 
+#anun{ 
+    margin-top: 300px; 
+    margin-left: 30px;
+    text-decoration: underline; 
+    text-underline-offset: 20px;  
+    text-decoration-thickness: 1px;
+} 
+#date{ 
+    margin-left: 100px; 
+    margin-top: auto; 
+    font-family: serif;
+} 
+.arrow {
+    display: inline-block;
+    font-size: 40px;
+    position: relative;
+    animation: moveUpDown 1s infinite alternate;  
+    font-size: 80px; 
+    margin-left: 160px;
+  }
+
+  @keyframes moveUpDown {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px); 
+    }} 
+ 
+#xosq{ 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-size: 25px;
+} 
+#p2{   
+    margin-top: -29px;
+    margin-left: -3px; 
+    font-size: 25px;
+} 
+#p3{ 
+    margin-top: -75px;
+    margin-left: -110px; 
+    font-size: 25px;
+} 
+#p4{ 
+    margin-top: -75px;
+    margin-left: -25px; 
+    font-size: 25px;
+} 
+#psak{ 
+    margin-top: 100px; 
+    margin-left: 35px;  
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-size: 30px;
+} 
+#clock{ 
+    margin-top: 30px;  
+    margin-left: 110px; 
+    font-family: 'Times New Roman', Times, serif;
+} 
+#location{  
+    margin-top: -10px;  
+    margin-left: 55px; 
+    font-size: 25px;
+} 
+#where{  
+    background: none; 
+    color: white;
+    margin-top: 20px; 
+    margin-left: 55px;   
+    font-size: 20px; 
+    border-style: solid; 
+    width: 170px; 
+    border-radius: 20px;  
+    display: flex;          
+    justify-content: center;  
+    border: 2px solid white; 
+    width: 200px; 
+    height: 40px;
+} 
+#map {
+    display: none;
+    margin-top: 20px; 
+} 
+#hasce{ 
+    margin-top: 40px; 
+    font-size: 20px; 
+    text-decoration: underline; 
+    text-underline-offset: 70px; 
+    text-decoration-thickness: 1px;
+} 
+#p5{ 
+    margin-top: -10px;  
+    margin-left: 60px;
+    font-size: 20px;  
+}   
+#p6{ 
+    margin-top: 60px;   
+    margin-left: 35px;  
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-size: 30px;
+} 
+#clock1{  
+    margin-top: -10px;  
+    margin-left: 120px; 
+    font-size: 30px;  
+    font-family: 'Times New Roman', Times, serif;
+
+}
+#location1{ 
+    margin-top: -10px;  
+    margin-left: -20px; 
+    font-size: 25px;
+}  
+#where1{ 
+    background: none; 
+    color: white;
+    margin-top: 20px; 
+    margin-left: 55px;   
+    font-size: 20px; 
+    border-style: solid; 
+    width: 170px; 
+    border-radius: 20px;  
+    display: flex;          
+    justify-content: center;  
+    border: 2px solid white; 
+    width: 200px; 
+    height: 40px;
+} 
+#p7{
+    margin-top: 30px;   
+    margin-left: 50px;
+    font-size: 20px;
+}
+    </style>
+</head>
+<body id="body">     
+ <div>
+    <img src="78993a3df52a8cee4ea078c13edfb137.jpg" id="image"> <div id="top">ՀԱՐՍԱՆՅԱՑ ՀՐԱՎԵՐ <p id="anun">ՀԱՅԿ ԵՎ ՄԱՐԻԱ</p> <p id="date">20.07.2024</p> <div class="arrow">↓</div> <p id="xosq"><br id="br1">Ընկերներ և բարեկամներ,<br> <p id="p2">Սիրով սպասում ենք Ձեզ՝</p> <br><p id="p3">կիսելու մեզ հետ մեր կյանքի հիշարժան օրը։</p> <br><p id="p4">Սիրով սպասում ենք բոլորիդ։</p></p> 
+<p id="psak">Պսակադրություն</p> <p id="clock">13:00</p> <p  id="location">Սաղմոսավանք</p> <button id="where" onclick="showContent()">Ինչպես հասնել</button>   
+<p id="hasce">Հասցեն՝ Արագածոտնի մարզ,<br><p id="p5"> գ․ Սաղմոսավան</p></p> <p id="p6">Հանդիսություն</p>  
+<p id="clock1">17:00</p> <p id="location1"><Վիվալդի հոլլ> ռեստորան </p> <button id="where1" onclick="showContentTwo()">Ինչպես հասնել</button> <p id="p7">Ազատության 24/44</p>
+<div id="line"></div>
+
+
+</div> </div>
+<script>  
+    function showContent() { 
+    const url = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6078.508069460741!2d44.38890164190128!3d40.381062058525174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406a83a69eed55f7%3A0x1fd9410486e7669!2sSaghmosavan!5e0!3m2!1sen!2sam!4v1741799010949!5m2!1sen!2sam";
+     
+      window.open(url, "_blank");
+} 
+function showContentTwo() { 
+    const url = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3047.0260233730764!2d44.52713087513813!3d40.20848406828901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abd31f37afe79%3A0xaa4e739cac13e05!2sVivaldi!5e0!3m2!1sen!2sam!4v1741801749870!5m2!1sen!2sam";
+    window.open(url, "_blank"); 
+}
+</script>
+</body>
+</html>
