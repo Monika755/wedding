@@ -49,7 +49,8 @@ function App() {
       />
 
       <div className="overlay">
-        <h1>Հարսանյաց հրավեր</h1>
+        <h1>Հարսանյաց հրավեր</h1> 
+        <h1>Վերգինե Վահե</h1>
       </div>
 
       <div className="invite">
