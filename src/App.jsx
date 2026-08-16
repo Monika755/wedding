@@ -1,19 +1,46 @@
+import { useEffect, useRef } from "react";
 import "./App.css";
 
 import wedding from "./assets/wedding.png";
-
 import church from "./assets/church.png";
 import churchImage from "./assets/ekexeci.png";
 import party from "./assets/party.png";
 import restaurant from "./assets/restoran.png";
+import music from "./assets/erg.mp3";
 
 function App() {
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    const startMusic = () => {
+      if (audioRef.current) {
+        audioRef.current.play().catch(() => {});
+      }
+    };
+
+    // Փորձում ենք միացնել էջը բացվելուն պես
+    startMusic();
+
+    // Եթե browser-ը արգելափակի autoplay-ը,
+    // առաջին click/tap-ի ժամանակ կսկսի երգը
+    document.addEventListener("click", startMusic, { once: true });
+    document.addEventListener("touchstart", startMusic, { once: true });
+
+    return () => {
+      document.removeEventListener("click", startMusic);
+      document.removeEventListener("touchstart", startMusic);
+    };
+  }, []);
+
   return (
     <div className="wedding-page">
 
-      {/* ========================================
-          ՀԱՐՍԱՆԵԿԱՆ ՆԿԱՐ
-      ======================================== */}
+      <audio
+        ref={audioRef}
+        src={music}
+        loop
+        preload="auto"
+      />
 
       <img
         src={wedding}
@@ -21,19 +48,9 @@ function App() {
         className="wedding-image"
       />
 
-
-      {/* ========================================
-          ՆԿԱՐԻ ՎՐԱ ՎԵՐՆԱԳԻՐ
-      ======================================== */}
-
       <div className="overlay">
         <h1>Հարսանյաց հրավեր</h1>
       </div>
-
-
-      {/* ========================================
-          ՀՐԱՎԵՐԻ ՀԱՏՎԱԾ
-      ======================================== */}
 
       <div className="invite">
 
@@ -45,13 +62,7 @@ function App() {
         </p>
 
         <h3>Սիրով հրավիրում ենք Ձեզ մեր</h3>
-
         <h3>Հարսանիքին</h3>
-
-
-        {/* ========================================
-            ՍԵՊՏԵՄԲԵՐԻ ՕՐԵՐ
-        ======================================== */}
 
         <div className="date-section">
 
@@ -88,125 +99,104 @@ function App() {
         </div>
 
       </div>
- 
 
-<section className="program-section">
+      <section className="program-section">
 
-  <h2 className="program-title">
-    Օրվա ծրագիր
-  </h2>
+        <h2 className="program-title">
+          Օրվա ծրագիր
+        </h2>
 
+        <div className="program-item">
 
-  {/* ========================================
-      👰 ՀԱՐՍԻ ՏՈՒՆ
-  ======================================== */}
+          <h3>Հարսի տուն</h3>
 
-  <div className="program-item">
+          <div className="program-time">
+            12:00
+          </div>
 
-    <h3>Հարսի տուն</h3>
+          <img
+            src={church}
+            alt="Հարսի տուն"
+            className="program-image"
+          />
 
-    <div className="program-time">
-      12:00
-    </div>
+        </div>
 
-    <img
-      src={church}
-      alt="Հարսի տուն"
-      className="program-image"
-    />
+        <div className="program-item">
 
-  </div>
+          <h3>Պսակադրություն</h3>
 
+          <div className="program-time">
+            14:00
+          </div>
 
-  {/* ========================================
-      ⛪ ՊՍԱԿԱԴՐՈՒԹՅՈՒՆ
-  ======================================== */}
+          <p className="program-place">
+            Սուրբ Գևորգ եկեղեցի (Մուղնի)
+          </p>
 
-  <div className="program-item">
+          <img
+            src={churchImage}
+            alt="Սուրբ Գևորգ եկեղեցի"
+            className="programimage"
+          />
 
-    <h3>Պսակադրություն</h3>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Սուրբ+Գևորգ+եկեղեցի+Մուղնի"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="map-button"
+          >
+            Ինչպես հասնել
+          </a>
 
-    <div className="program-time">
-      14:00
-    </div>
+        </div>
 
-    <p className="program-place">
-      Սուրբ Գևորգ եկեղեցի (Մուղնի)
-    </p>
+        <div className="program-item">
 
-    <img
-      src={churchImage}
-      alt="Սուրբ Գևորգ եկեղեցի"
-      className="programimage"
-    />
+          <h3>Փեսայի տուն</h3>
 
-    <a
-      href="https://www.google.com/maps/search/?api=1&query=Սուրբ+Գևորգ+եկեղեցի+Մուղնի"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="map-button"
-    >
-      Ինչպես հասնել
-    </a>
+          <div className="program-time">
+            15:00
+          </div>
 
-  </div>
+          <img
+            src={party}
+            alt="Փեսայի տուն"
+            className="program-image"
+          />
 
+        </div>
 
-  {/* ========================================
-      🤵 ՓԵՍԱՅԻ ՏՈՒՆ
-  ======================================== */}
+        <div className="program-item">
 
-  <div className="program-item">
+          <h3>Հարսանյաց հանդիսություն</h3>
 
-    <h3>Փեսայի տուն</h3>
+          <div className="program-time">
+            17:00
+          </div>
 
-    <div className="program-time">
-      15:00
-    </div>
+          <p className="program-place">
+            Ashtarak Hall
+          </p>
 
-    <img
-      src={party}
-      alt="Փեսայի տուն"
-      className="program-image"
-    />
+          <img
+            src={restaurant}
+            alt="Ashtarak Hall"
+            className="programimage"
+          />
 
-  </div>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Ashtarak+Hall"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="map-button"
+          >
+            Ինչպես հասնել
+          </a>
 
+        </div>
 
-  {/* ========================================
-      🥂 ՀԱՐՍԱՆՅԱՑ ՀԱՆԴԻՍՈՒԹՅՈՒՆ
-  ======================================== */}
-
-  <div className="program-item">
-
-    <h3>Հարսանյաց հանդիսություն</h3>
-
-    <div className="program-time">
-      17:00
-    </div>
-
-    <p className="program-place">
-      Ashtarak Hall
-    </p>
-
-    <img
-      src={restaurant}
-      alt="Ashtarak Hall"
-      className="programimage"
-    />
-
-    <a
-      href="https://www.google.com/maps/search/?api=1&query=Ashtarak+Hall"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="map-button"
-    >
-      Ինչպես հասնել
-    </a>
-
-  </div>
-
-</section>
+      </section>
 
     </div>
   );
